@@ -29,7 +29,6 @@ namespace MessageQueue
             string cnx = "mongodb://127.0.0.1";
             CancellationTokenSource exitToken = new CancellationTokenSource();
 
-            var db = new MongoDB.Driver.MongoClient(cnx).GetDatabase("devapps");
             MongoHelper.MongoQueue2 mq = new MongoHelper.MongoQueue2(cnx, "devapps", "mq", true);
             Task t1 = Task.Run(async () =>
             {
